@@ -1,13 +1,12 @@
 /**
  * Write a description of class Typist here.
  *
- * Starter code generously abandoned by Ty Posaurus, your predecessor,
- * who typed with two fingers and considered that "good enough".
- * He left a sticky note: "the slide-back thing is optional probably".
- * It is not optional. Good luck.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Represents a typist participating in the typing race simulation.
+ * A typist has a name, symbol, progress value, burnout state,
+ * remaining burnout turns, and an accuracy rating.
+ * 
+ * @author Onur Baha ACAR
+ * @version 2026-04-11
  */
 public class Typist
 {
@@ -17,6 +16,12 @@ public class Typist
     // Another tracks whether the typist is currently burnt out.
     // A third tracks HOW MANY turns of burnout remain (not just whether they are burnt out).
     // The remaining three should be fairly obvious.
+    private String name;
+    private char symbol;
+    private int progress;
+    private boolean burntOut;
+    private int burnoutTurnsRemaining;
+    private double accuracy;
 
 
 
@@ -32,7 +37,12 @@ public class Typist
      */
     public Typist(char typistSymbol, String typistName, double typistAccuracy)
     {
-
+        symbol = typistSymbol;
+        name = typistName;
+        progress = 0;
+        burntOut = false;
+        burnoutTurnsRemaining = 0;
+        setAccuracy(typistAccuracy);
     }
 
 
@@ -46,7 +56,8 @@ public class Typist
      */
     public void burnOut(int turns)
     {
-
+        burntOut = true;
+        burnoutTurnsRemaining = turns;
     }
 
     /**
@@ -56,7 +67,16 @@ public class Typist
      */
     public void recoverFromBurnout()
     {
+        if (burntOut)
+        {
+            burnoutTurnsRemaining--;
 
+            if (burnoutTurnsRemaining <= 0)
+            {
+                burnoutTurnsRemaining = 0;
+                burntOut = false;
+            }
+        }
     }
 
     /**
@@ -66,7 +86,7 @@ public class Typist
      */
     public double getAccuracy()
     {
-        return 0.0; // placeholder - replace with correct implementation
+        return accuracy; 
     }
 
     /**
@@ -78,7 +98,7 @@ public class Typist
      */
     public int getProgress()
     {
-        return 0; // placeholder - replace with correct implementation
+        return progress;
     }
 
     /**
@@ -88,7 +108,7 @@ public class Typist
      */
     public String getName()
     {
-        return ""; // placeholder - replace with correct implementation
+        return name; 
     }
 
     /**
@@ -98,7 +118,7 @@ public class Typist
      */
     public char getSymbol()
     {
-        return ' '; // placeholder - replace with correct implementation
+        return symbol; 
     }
 
     /**
@@ -109,7 +129,7 @@ public class Typist
      */
     public int getBurnoutTurnsRemaining()
     {
-        return 0; // placeholder - replace with correct implementation
+        return burnoutTurnsRemaining; 
     }
 
     /**
@@ -118,7 +138,9 @@ public class Typist
      */
     public void resetToStart()
     {
-
+        progress = 0;
+        burntOut = false;
+        burnoutTurnsRemaining = 0;
     }
 
     /**
@@ -128,7 +150,7 @@ public class Typist
      */
     public boolean isBurntOut()
     {
-        return false; // placeholder - replace with correct implementation
+        return burntOut; 
     }
 
     /**
@@ -137,7 +159,10 @@ public class Typist
      */
     public void typeCharacter()
     {
-
+        if (!burntOut)
+        {
+            progress++;
+        }
     }
 
     /**
@@ -148,7 +173,12 @@ public class Typist
      */
     public void slideBack(int amount)
     {
+        progress = progress - amount;
 
+        if (progress < 0)
+        {
+            progress = 0;
+        }
     }
 
     /**
@@ -159,7 +189,18 @@ public class Typist
      */
     public void setAccuracy(double newAccuracy)
     {
-
+        if (newAccuracy < 0.0)
+        {
+            accuracy = 0.0;
+        }
+        else if (newAccuracy > 1.0)
+        {
+            accuracy = 1.0;
+        }
+        else
+        {
+            accuracy = newAccuracy;
+        }
     }
 
     /**
@@ -169,7 +210,7 @@ public class Typist
      */
     public void setSymbol(char newSymbol)
     {
-
+        symbol = newSymbol;
     }
 
 }
