@@ -54,3 +54,14 @@ To be implemented as part of the coursework. Place all GUI-related source files 
 
 - All code should compile and run using standard command-line tools without any IDE-specific configuration.
 - The starter code in Part1 was originally written by Ty Posaurus. It contains known issues — finding and fixing them is part of the coursework.
+
+## Git Workflow
+
+This project was managed using Git and GitHub.
+
+- Repository initialised locally and pushed to GitHub
+- Part I and Part II orgnaised into separate folders
+- Changes committed with descriptive messages
+- Updates pushed regularly to remote repository
+
+(Note: Development was primarily carried out on the main branch.)
