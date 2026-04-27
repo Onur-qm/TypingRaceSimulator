@@ -66,4 +66,4 @@ This project was managed using Git and GitHub for version control.
 
 (Note: Development was primarily carried out on the main branch.)
 
-Repository linkl: 
+Repository link: https://github.com/Onur-qm/TypingRaceSimulator/tree/main
