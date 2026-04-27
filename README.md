@@ -57,11 +57,13 @@ To be implemented as part of the coursework. Place all GUI-related source files 
 
 ## Git Workflow
 
-This project was managed using Git and GitHub.
+This project was managed using Git and GitHub for version control.
 
-- Repository initialised locally and pushed to GitHub
-- Part I and Part II orgnaised into separate folders
-- Changes committed with descriptive messages
-- Updates pushed regularly to remote repository
+- A local repository was initialised at the start of the project and linked to a remote GitHub repository.
+- The project was organised into Part I and Part II directories for clarity.
+- Changes were committed regularly using meaningful and descriptive commit messages.
+- Updates were pushed frequently to the remote repository to maintain version history.
 
 (Note: Development was primarily carried out on the main branch.)
+
+Repository linkl: 
