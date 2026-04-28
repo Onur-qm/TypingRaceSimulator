@@ -272,4 +272,20 @@ public class TypingRace
             i = i + 1;
         }
     }
+
+    // Main method was added for testing the TypingRace simulation
+    // not part of the original coursework specification.
+    public static void main(String[] args)
+    {
+        // Create a typing race with passage length 40
+        TypingRace race = new TypingRace(40);
+
+        // Add three typists with different accuracy levels
+        race.addTypist(new Typist('①', "TURBOFINGERS", 0.85), 1);
+        race.addTypist(new Typist('②', "QWERTY_QUEEN", 0.60), 2);
+        race.addTypist(new Typist('③', "HUNT_N_PECK", 0.30), 3);
+
+        // Start the race simulation
+        race.startRace();
+    }
 }
