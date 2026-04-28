@@ -67,3 +67,8 @@ This project was managed using Git and GitHub for version control.
 (Note: Development was primarily carried out on the main branch.)
 
 Repository link: https://github.com/Onur-qm/TypingRaceSimulator/tree/main
+
+## Notes
+
+- A main() method was added in TypingRace.java for testing purposes.
+- This was not part of the original coursework specification.
